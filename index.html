@@ -1,0 +1,1459 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小绘 - 插画创作者品牌_原创绘作与创作记录</title>
+<meta name="description" content="小小绘官方网站，独立插画创作者「小小」的原创绘作门户，汇集手绘插画、创作幕后、角色设定与社区共创内容，持续运营的高品质原创内容生态。">
+<meta name="keywords" content="小小绘,插画创作者,原创插画,绘作,创作幕后,角色设定,手绘">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b1d29'/%3E%3Cpath d='M18 46c6-16 12-24 14-24s2 10 6 10 4-6 8-8' stroke='%23f7b955' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='22' cy='20' r='3' fill='%235ec8d6'/%3E%3C/svg%3E">
+<style>
+:root{
+  --xxh-ink:#1b1d29;
+  --xxh-ink-soft:#3a3e52;
+  --xxh-paper:#f5f3ee;
+  --xxh-white:#ffffff;
+  --xxh-amber:#f7b955;
+  --xxh-amber-deep:#e08a1e;
+  --xxh-teal:#2f8f9d;
+  --xxh-teal-soft:#5ec8d6;
+  --xxh-violet:#6c5ce7;
+  --xxh-line:#e2ddd3;
+  --xxh-shadow:0 12px 32px rgba(27,29,41,.10);
+  --xxh-radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",system-ui,sans-serif;
+  background:var(--xxh-paper);color:var(--xxh-ink);line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.xxh-wrap{width:min(1180px,92%);margin:0 auto}
+
+/* ============ 吸顶区：公告条 + 页头 ============ */
+.xxh-sticky-top{position:sticky;top:0;z-index:120}
+.xxh-notice{
+  background:linear-gradient(90deg,#1b1d29,#2b2f45 60%,#1b1d29);
+  color:#efe9dc;font-size:13.5px;letter-spacing:.02em;
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  padding:9px 18px;text-align:center;flex-wrap:wrap;
+}
+.xxh-notice-badge{
+  background:var(--xxh-amber);color:#241a05;font-weight:700;
+  font-size:12px;border-radius:999px;padding:2px 10px;letter-spacing:.08em;white-space:nowrap;
+}
+.xxh-notice-text strong{color:var(--xxh-teal-soft)}
+.xxh-notice a.xxh-notice-link{color:var(--xxh-amber);border-bottom:1px dashed rgba(247,185,85,.55);white-space:nowrap}
+.xxh-header{background:rgba(245,243,238,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--xxh-line)}
+.xxh-header-inner{display:flex;align-items:center;gap:26px;padding:14px 0}
+.xxh-logo{display:flex;align-items:center;gap:11px;flex:0 0 auto}
+.xxh-logo-mark{
+  width:44px;height:44px;border-radius:13px;background:var(--xxh-ink);
+  display:grid;place-items:center;color:var(--xxh-amber);font-weight:800;font-size:19px;
+  box-shadow:inset 0 0 0 2px rgba(247,185,85,.35);
+}
+.xxh-logo-txt b{display:block;font-size:19px;letter-spacing:.06em;line-height:1.2}
+.xxh-logo-txt span{display:block;font-size:11.5px;color:var(--xxh-ink-soft);letter-spacing:.24em}
+.xxh-nav{display:flex;gap:4px;flex:1 1 auto;flex-wrap:wrap}
+.xxh-nav a{
+  font-size:14.5px;padding:7px 13px;border-radius:10px;color:var(--xxh-ink-soft);
+  transition:.22s;
+}
+.xxh-nav a:hover,.xxh-nav a.is-active{background:#ebe6da;color:var(--xxh-ink);font-weight:600}
+.xxh-search{position:relative;flex:0 1 240px;display:flex;align-items:center}
+.xxh-search input{
+  width:100%;border:1px solid var(--xxh-line);background:var(--xxh-white);
+  border-radius:999px;padding:9px 40px 9px 16px;font-size:13.5px;color:var(--xxh-ink);
+  outline:none;transition:.22s;
+}
+.xxh-search input:focus{border-color:var(--xxh-teal);box-shadow:0 0 0 3px rgba(47,143,157,.14)}
+.xxh-search button{
+  position:absolute;right:5px;top:50%;transform:translateY(-50%);
+  width:31px;height:31px;border-radius:50%;background:var(--xxh-ink);color:#fff;
+  display:grid;place-items:center;font-size:14px;
+}
+.xxh-search-tip{
+  position:absolute;top:calc(100% + 8px);left:0;right:0;background:var(--xxh-white);
+  border:1px solid var(--xxh-line);border-radius:12px;box-shadow:var(--xxh-shadow);
+  padding:8px;font-size:13px;display:none;z-index:60;
+}
+.xxh-search-tip.show{display:block}
+.xxh-search-tip p{padding:5px 8px;color:var(--xxh-ink-soft);border-radius:7px}
+.xxh-search-tip p:hover{background:#f1ecdf}
+.xxh-search-tip .xxh-empty{color:#b04a3a}
+.xxh-burger{display:none;width:42px;height:42px;border-radius:11px;border:1px solid var(--xxh-line);background:#fff}
+.xxh-burger span{display:block;width:19px;height:2px;background:var(--xxh-ink);margin:4px auto;border-radius:2px;transition:.25s}
+.xxh-burger.on span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.xxh-burger.on span:nth-child(2){opacity:0}
+.xxh-burger.on span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+/* ============ 首屏 ============ */
+.xxh-hero{padding:58px 0 66px;position:relative;overflow:hidden}
+.xxh-hero::before{
+  content:"";position:absolute;right:-140px;top:-120px;width:520px;height:520px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,rgba(247,185,85,.32),rgba(94,200,214,.14) 55%,transparent 72%);
+}
+.xxh-hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:center;position:relative}
+.xxh-eyebrow{
+  display:inline-flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.2em;
+  color:var(--xxh-teal);background:#e6f2f3;border-radius:999px;padding:5px 14px;font-weight:600;
+}
+.xxh-hero h1{
+  font-size:clamp(40px,5.6vw,66px);line-height:1.08;letter-spacing:-.02em;
+  margin:20px 0 8px;font-weight:800;
+}
+.xxh-hero h1 em{font-style:normal;color:var(--xxh-amber-deep);position:relative}
+.xxh-hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:9px;background:rgba(247,185,85,.42);z-index:-1;border-radius:4px}
+.xxh-hero-sub{font-size:17px;color:var(--xxh-ink-soft);max-width:520px;margin-bottom:22px}
+.xxh-hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-bottom:30px}
+.xxh-btn{
+  display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:12px 24px;
+  font-size:14.5px;font-weight:600;transition:.22s;border:1px solid transparent;
+}
+.xxh-btn-primary{background:var(--xxh-ink);color:#fff;box-shadow:0 10px 22px rgba(27,29,41,.20)}
+.xxh-btn-primary:hover{transform:translateY(-2px);background:#2a2e42}
+.xxh-btn-ghost{background:transparent;border-color:var(--xxh-ink);color:var(--xxh-ink)}
+.xxh-btn-ghost:hover{background:var(--xxh-ink);color:#fff}
+.xxh-btn-amber{background:var(--xxh-amber);color:#241a05}
+.xxh-btn-amber:hover{background:var(--xxh-amber-deep);color:#fff}
+.xxh-hero-stats{display:flex;gap:36px;flex-wrap:wrap}
+.xxh-stat b{display:block;font-size:27px;line-height:1.15;color:var(--xxh-ink);font-weight:800}
+.xxh-stat b i{font-style:normal;font-size:14px;color:var(--xxh-teal);margin-left:2px}
+.xxh-stat span{font-size:12.5px;color:var(--xxh-ink-soft);letter-spacing:.06em}
+.xxh-hero-art{position:relative}
+.xxh-hero-art .xxh-art-main{border-radius:22px;overflow:hidden;box-shadow:var(--xxh-shadow);border:1px solid var(--xxh-line)}
+.xxh-art-float{
+  position:absolute;background:rgba(255,255,255,.94);border:1px solid var(--xxh-line);
+  border-radius:14px;padding:10px 15px;box-shadow:var(--xxh-shadow);font-size:12.5px;color:var(--xxh-ink-soft);
+}
+.xxh-art-float b{display:block;color:var(--xxh-ink);font-size:14px}
+.xxh-float-a{left:-16px;bottom:38px}
+.xxh-float-b{right:-10px;top:26px}
+.xxh-float-c{right:22px;bottom:-16px;background:var(--xxh-ink);color:#e8e2d5;border-color:#2b2f45}
+.xxh-float-c b{color:var(--xxh-amber)}
+
+/* ============ 通用区块 ============ */
+.xxh-section{padding:64px 0}
+.xxh-section--alt{background:var(--xxh-white);border-top:1px solid var(--xxh-line);border-bottom:1px solid var(--xxh-line)}
+.xxh-sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:34px;flex-wrap:wrap}
+.xxh-sec-head h2{font-size:clamp(26px,3.4vw,36px);letter-spacing:-.01em;font-weight:800;line-height:1.2}
+.xxh-sec-head h2 i{font-style:normal;color:var(--xxh-amber-deep)}
+.xxh-sec-kicker{font-size:12.5px;letter-spacing:.24em;color:var(--xxh-teal);font-weight:700;margin-bottom:8px;display:block}
+.xxh-sec-desc{font-size:14.5px;color:var(--xxh-ink-soft);max-width:560px}
+.xxh-sec-link{font-size:14px;font-weight:600;color:var(--xxh-ink);border-bottom:2px solid var(--xxh-amber);padding-bottom:2px;white-space:nowrap}
+
+/* ============ 深度解析长文 ============ */
+.xxh-about{padding:66px 0 60px}
+.xxh-about-inner{display:grid;grid-template-columns:290px 1fr;gap:52px}
+.xxh-about-side{position:relative}
+.xxh-about-side .xxh-side-sticky{position:sticky;top:136px}
+.xxh-about-side h2{font-size:30px;line-height:1.24;font-weight:800;margin-bottom:14px}
+.xxh-about-side h2 i{font-style:normal;color:var(--xxh-teal)}
+.xxh-about-side p{font-size:14px;color:var(--xxh-ink-soft)}
+.xxh-side-mini{margin-top:22px;border-left:3px solid var(--xxh-amber);padding-left:14px;font-size:13.5px;color:var(--xxh-ink-soft)}
+.xxh-about-body p{font-size:15.5px;color:var(--xxh-ink-soft);margin-bottom:18px;text-align:justify}
+.xxh-about-body p strong{color:var(--xxh-ink);font-weight:700}
+.xxh-about-body h3{font-size:19px;margin:30px 0 12px;font-weight:700;color:var(--xxh-ink);display:flex;align-items:center;gap:10px}
+.xxh-about-body h3::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--xxh-teal);transform:rotate(45deg);flex:0 0 auto}
+.xxh-quote{
+  background:#fbf7ec;border:1px solid #f0e4c8;border-left:5px solid var(--xxh-amber);
+  border-radius:0 12px 12px 0;padding:16px 20px;font-size:14.5px;color:#6b5525;margin:22px 0;
+}
+.xxh-quote b{color:#8a6414}
+
+/* ============ 焦点内容 ============ */
+.xxh-focus-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:22px}
+.xxh-focus-main{border-radius:var(--xxh-radius);overflow:hidden;position:relative;box-shadow:var(--xxh-shadow);background:#000}
+.xxh-focus-main img{width:100%;height:100%;object-fit:cover;min-height:330px;aspect-ratio:16/10}
+.xxh-focus-overlay{
+  position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:26px;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(10,12,20,.82));
+  color:#fff;
+}
+.xxh-focus-overlay .xxh-tag-inline{align-self:flex-start;background:var(--xxh-amber);color:#241a05;font-size:11.5px;font-weight:700;border-radius:999px;padding:3px 11px;margin-bottom:10px}
+.xxh-focus-overlay h3{font-size:23px;line-height:1.3;font-weight:700;margin-bottom:6px}
+.xxh-focus-overlay p{font-size:13.5px;color:#d9d5cb;margin-bottom:12px}
+.xxh-focus-side{display:grid;gap:22px}
+.xxh-mini-card{
+  display:grid;grid-template-columns:126px 1fr;gap:14px;background:var(--xxh-white);
+  border:1px solid var(--xxh-line);border-radius:14px;overflow:hidden;transition:.24s;
+}
+.xxh-mini-card:hover{transform:translateY(-3px);box-shadow:var(--xxh-shadow)}
+.xxh-mini-card img{width:100%;height:100%;object-fit:cover;aspect-ratio:1/1}
+.xxh-mini-body{padding:12px 14px 12px 0;display:flex;flex-direction:column;justify-content:center}
+.xxh-mini-body h4{font-size:15px;line-height:1.4;font-weight:700;margin-bottom:6px}
+.xxh-mini-body span{font-size:12px;color:var(--xxh-ink-soft)}
+
+/* ============ 视频卡片流 ============ */
+.xxh-video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.xxh-vcard{
+  background:var(--xxh-white);border-radius:var(--xxh-radius);overflow:hidden;
+  border:1px solid var(--xxh-line);display:flex;flex-direction:column;transition:.26s;
+}
+.xxh-vcard:hover{transform:translateY(-5px);box-shadow:var(--xxh-shadow);border-color:#d6cfc0}
+.xxh-cover{position:relative;aspect-ratio:16/9;overflow:hidden;background:#222}
+.xxh-cover img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.xxh-vcard:hover .xxh-cover img{transform:scale(1.06)}
+.xxh-cover-tag{
+  position:absolute;left:10px;top:10px;background:rgba(27,29,41,.82);color:#fff;
+  font-size:11px;padding:3px 9px;border-radius:6px;letter-spacing:.05em;
+}
+.xxh-cover-dur{
+  position:absolute;right:10px;bottom:10px;background:rgba(27,29,41,.8);color:#fff;
+  font-size:11px;padding:2px 8px;border-radius:6px;
+}
+.xxh-vbody{padding:16px 17px 17px;display:flex;flex-direction:column;flex:1 1 auto}
+.xxh-vbody h3{font-size:16.5px;line-height:1.42;font-weight:700;margin-bottom:8px}
+.xxh-vbody p{font-size:13px;color:var(--xxh-ink-soft);flex:1 1 auto;margin-bottom:12px}
+.xxh-vmeta{display:flex;align-items:center;gap:8px;font-size:12px;color:#8b8779;margin-bottom:12px}
+.xxh-avatar-s{
+  width:24px;height:24px;border-radius:50%;display:grid;place-items:center;
+  font-size:11px;font-weight:700;color:#fff;flex:0 0 auto;
+}
+.xxh-vacts{display:flex;gap:6px;flex-wrap:wrap;border-top:1px dashed var(--xxh-line);padding-top:11px}
+.xxh-act{
+  display:inline-flex;align-items:center;gap:5px;font-size:12.5px;color:var(--xxh-ink-soft);
+  background:#f4f0e8;border-radius:999px;padding:4px 11px;transition:.18s;
+}
+.xxh-act:hover{background:#e9e2d3;color:var(--xxh-ink)}
+.xxh-act.liked{background:#fdeaea;color:#c83a3a;font-weight:600}
+.xxh-act.saved{background:#e9f5f0;color:#22795b;font-weight:600}
+
+/* ============ 专题 ============ */
+.xxh-topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.xxh-topic{
+  border-radius:var(--xxh-radius);overflow:hidden;background:var(--xxh-white);
+  border:1px solid var(--xxh-line);transition:.26s;display:flex;flex-direction:column;
+}
+.xxh-topic:hover{transform:translateY(-4px);box-shadow:var(--xxh-shadow)}
+.xxh-topic-cover{aspect-ratio:16/9;overflow:hidden}
+.xxh-topic-cover img{width:100%;height:100%;object-fit:cover}
+.xxh-topic-body{padding:17px 18px 19px}
+.xxh-topic-state{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.05em;border-radius:6px;padding:2px 9px;margin-bottom:9px}
+.xxh-state-live{background:#e3f6ec;color:#1c7a4d}
+.xxh-state-soon{background:#fdf1dd;color:#a9701a}
+.xxh-topic-body h3{font-size:17px;font-weight:700;margin-bottom:7px;line-height:1.4}
+.xxh-topic-body p{font-size:13px;color:var(--xxh-ink-soft);margin-bottom:12px}
+.xxh-topic-meta{font-size:12px;color:#8b8779;display:flex;gap:14px;flex-wrap:wrap}
+
+/* ============ 创作者矩阵 ============ */
+.xxh-maker-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.xxh-maker{
+  background:var(--xxh-white);border:1px solid var(--xxh-line);border-radius:var(--xxh-radius);
+  padding:22px;transition:.26s;position:relative;
+}
+.xxh-maker:hover{border-color:var(--xxh-teal);box-shadow:var(--xxh-shadow)}
+.xxh-maker-top{display:flex;gap:14px;align-items:center;margin-bottom:13px}
+.xxh-avatar-l{
+  width:54px;height:54px;border-radius:16px;display:grid;place-items:center;
+  font-size:20px;font-weight:800;color:#fff;flex:0 0 auto;
+}
+.xxh-maker-top h3{font-size:17px;font-weight:700;line-height:1.3}
+.xxh-maker-top span{font-size:12px;color:var(--xxh-teal);font-weight:600}
+.xxh-maker p{font-size:13px;color:var(--xxh-ink-soft);margin-bottom:14px;min-height:58px}
+.xxh-maker-stats{display:flex;gap:18px;font-size:12px;color:#8b8779;border-top:1px dashed var(--xxh-line);padding-top:12px;margin-bottom:13px}
+.xxh-maker-stats b{display:block;color:var(--xxh-ink);font-size:15px}
+.xxh-maker .xxh-btn{padding:7px 15px;font-size:12.5px}
+
+/* ============ 作品墙 ============ */
+.xxh-wall{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:172px;gap:16px}
+.xxh-wall-item{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--xxh-line)}
+.xxh-wall-item img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.xxh-wall-item:hover img{transform:scale(1.07)}
+.xxh-wall-item figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:22px 13px 10px;
+  background:linear-gradient(180deg,transparent,rgba(12,14,22,.8));
+  color:#fff;font-size:12.5px;line-height:1.4;
+}
+.xxh-wall-item.w2{grid-column:span 2}
+.xxh-wall-item.h2{grid-row:span 2}
+.xxh-wall-hint{font-size:13px;color:var(--xxh-ink-soft);margin-top:18px;text-align:center}
+
+/* ============ 评论 ============ */
+.xxh-review-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.xxh-review{
+  background:var(--xxh-white);border:1px solid var(--xxh-line);border-radius:14px;
+  padding:19px 21px;position:relative;
+}
+.xxh-review::before{
+  content:"“";position:absolute;right:18px;top:6px;font-size:52px;line-height:1;
+  color:#eee7d6;font-family:Georgia,serif;
+}
+.xxh-review-head{display:flex;align-items:center;gap:11px;margin-bottom:10px}
+.xxh-review-head b{font-size:14px}
+.xxh-review-head span{font-size:11.5px;color:#9b9485}
+.xxh-review p{font-size:13.5px;color:var(--xxh-ink-soft);position:relative;z-index:1}
+.xxh-review-tags{margin-top:10px;display:flex;gap:7px;flex-wrap:wrap}
+.xxh-review-tags i{font-style:normal;font-size:11px;background:#f4f0e8;color:#8b7550;border-radius:5px;padding:2px 8px}
+
+/* ============ 更新日志 ============ */
+.xxh-log{position:relative;padding-left:26px}
+.xxh-log::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--xxh-teal),var(--xxh-amber))}
+.xxh-log-item{position:relative;padding-bottom:26px}
+.xxh-log-item:last-child{padding-bottom:0}
+.xxh-log-item::before{
+  content:"";position:absolute;left:-26px;top:7px;width:14px;height:14px;border-radius:50%;
+  background:var(--xxh-white);border:3px solid var(--xxh-teal);
+}
+.xxh-log-item time{font-size:12px;color:var(--xxh-teal);font-weight:700;letter-spacing:.05em}
+.xxh-log-item h3{font-size:16px;font-weight:700;margin:3px 0 5px}
+.xxh-log-item p{font-size:13.5px;color:var(--xxh-ink-soft)}
+
+/* ============ FAQ ============ */
+.xxh-faq{max-width:840px;margin:0 auto}
+.xxh-faq details{
+  background:var(--xxh-white);border:1px solid var(--xxh-line);border-radius:12px;
+  margin-bottom:12px;overflow:hidden;transition:.2s;
+}
+.xxh-faq details[open]{border-color:var(--xxh-amber);box-shadow:0 6px 20px rgba(247,185,85,.1)}
+.xxh-faq summary{
+  padding:15px 20px;font-size:15px;font-weight:600;cursor:pointer;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.xxh-faq summary::-webkit-details-marker{display:none}
+.xxh-faq summary::after{content:"+";font-size:19px;color:var(--xxh-teal);font-weight:700;transition:.2s}
+.xxh-faq details[open] summary::after{content:"−"}
+.xxh-faq details p{padding:0 20px 16px;font-size:13.5px;color:var(--xxh-ink-soft)}
+
+/* ============ 投稿/联系 ============ */
+.xxh-join{background:var(--xxh-ink);color:#e9e4d8;border-radius:24px;padding:48px 44px;position:relative;overflow:hidden}
+.xxh-join::after{content:"";position:absolute;right:-70px;bottom:-90px;width:290px;height:290px;border-radius:50%;background:radial-gradient(circle,rgba(247,185,85,.32),transparent 70%)}
+.xxh-join-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:38px;position:relative;z-index:1}
+.xxh-join h2{font-size:clamp(25px,3.2vw,34px);font-weight:800;line-height:1.25;margin-bottom:14px}
+.xxh-join h2 i{font-style:normal;color:var(--xxh-amber)}
+.xxh-join p{font-size:14.5px;color:#b9b4a6;margin-bottom:22px}
+.xxh-join-actions{display:flex;gap:12px;flex-wrap:wrap}
+.xxh-join-side{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:22px}
+.xxh-join-side h3{font-size:15px;margin-bottom:14px;color:var(--xxh-amber)}
+.xxh-join-side li{font-size:13px;color:#b9b4a6;padding:6px 0;border-bottom:1px dashed rgba(255,255,255,.1);display:flex;justify-content:space-between;gap:10px}
+.xxh-join-side li:last-child{border-bottom:none}
+.xxh-join-side li b{color:#efe9dc;font-weight:600}
+
+/* ============ 页脚 ============ */
+.xxh-footer{background:#14161f;color:#9d998c;padding:52px 0 26px;margin-top:8px}
+.xxh-footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:34px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.1)}
+.xxh-footer h4{color:#efe9dc;font-size:14px;margin-bottom:14px;letter-spacing:.06em}
+.xxh-footer p{font-size:13px;line-height:1.8;margin-bottom:10px}
+.xxh-footer li{font-size:13px;padding:5px 0}
+.xxh-footer li a:hover{color:var(--xxh-amber)}
+.xxh-footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.xxh-footer-logo .xxh-logo-mark{width:38px;height:38px;font-size:16px;border-radius:11px}
+.xxh-footer-logo b{color:#efe9dc;font-size:17px;letter-spacing:.05em}
+.xxh-footer-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:20px;font-size:12.5px;color:#6f6c61}
+
+/* ============ 回到顶部 & Toast ============ */
+.xxh-to-top{
+  position:fixed;right:24px;bottom:26px;width:46px;height:46px;border-radius:50%;
+  background:var(--xxh-ink);color:var(--xxh-amber);font-size:19px;display:grid;place-items:center;
+  box-shadow:0 10px 24px rgba(27,29,41,.3);opacity:0;visibility:hidden;transform:translateY(12px);
+  transition:.26s;z-index:110;
+}
+.xxh-to-top.show{opacity:1;visibility:visible;transform:none}
+.xxh-toast{
+  position:fixed;left:50%;bottom:38px;transform:translate(-50%,20px);background:var(--xxh-ink);
+  color:#fff;font-size:13.5px;padding:11px 22px;border-radius:999px;box-shadow:var(--xxh-shadow);
+  opacity:0;visibility:hidden;transition:.28s;z-index:200;pointer-events:none;
+}
+.xxh-toast.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
+
+/* ============ 弹窗 ============ */
+.xxh-modal{
+  position:fixed;inset:0;background:rgba(16,18,26,.55);backdrop-filter:blur(3px);
+  display:none;align-items:center;justify-content:center;padding:20px;z-index:180;
+}
+.xxh-modal.show{display:flex}
+.xxh-modal-box{
+  background:var(--xxh-white);border-radius:18px;width:min(520px,100%);
+  padding:28px 28px 26px;box-shadow:0 24px 60px rgba(0,0,0,.3);position:relative;
+  max-height:86vh;overflow:auto;
+}
+.xxh-modal-box h3{font-size:20px;font-weight:800;margin-bottom:6px}
+.xxh-modal-box .xxh-modal-sub{font-size:13px;color:var(--xxh-ink-soft);margin-bottom:18px}
+.xxh-modal-close{
+  position:absolute;right:16px;top:14px;width:32px;height:32px;border-radius:50%;
+  background:#f2eee4;color:var(--xxh-ink);font-size:16px;
+}
+.xxh-modal-box label{display:block;font-size:13px;font-weight:600;margin:12px 0 5px}
+.xxh-modal-box input,.xxh-modal-box textarea,.xxh-modal-box select{
+  width:100%;border:1px solid var(--xxh-line);border-radius:9px;padding:9px 12px;
+  font-size:13.5px;font-family:inherit;color:var(--xxh-ink);outline:none;background:#fbfaf6;
+}
+.xxh-modal-box input:focus,.xxh-modal-box textarea:focus,.xxh-modal-box select:focus{border-color:var(--xxh-teal)}
+.xxh-modal-box .xxh-btn{margin-top:18px;width:100%;justify-content:center}
+.xxh-share-list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.xxh-share-list button{
+  background:#f4f0e8;border-radius:10px;padding:13px 6px;font-size:13px;font-weight:600;
+  color:var(--xxh-ink-soft);transition:.18s;
+}
+.xxh-share-list button:hover{background:var(--xxh-amber);color:#241a05}
+
+/* ============ 响应式 ============ */
+@media(max-width:1024px){
+  .xxh-hero-grid{grid-template-columns:1fr;gap:38px}
+  .xxh-about-inner{grid-template-columns:1fr;gap:26px}
+  .xxh-about-side .xxh-side-sticky{position:static}
+  .xxh-focus-grid{grid-template-columns:1fr}
+  .xxh-video-grid,.xxh-topic-grid,.xxh-maker-grid{grid-template-columns:repeat(2,1fr)}
+  .xxh-footer-grid{grid-template-columns:1fr 1fr}
+  .xxh-join-grid{grid-template-columns:1fr}
+  .xxh-wall{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:760px){
+  html{scroll-padding-top:150px}
+  .xxh-header-inner{flex-wrap:wrap;gap:12px}
+  .xxh-burger{display:block;order:2}
+  .xxh-search{order:3;flex:1 1 100%}
+  .xxh-nav{
+    order:4;flex:1 1 100%;flex-direction:column;gap:2px;
+    max-height:0;overflow:hidden;transition:max-height .32s ease;
+  }
+  .xxh-nav.open{max-height:420px;padding-bottom:8px}
+  .xxh-nav a{padding:10px 12px;border-radius:9px}
+  .xxh-video-grid,.xxh-topic-grid,.xxh-maker-grid,.xxh-review-grid{grid-template-columns:1fr}
+  .xxh-wall{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}
+  .xxh-wall-item.w2{grid-column:span 2}
+  .xxh-footer-grid{grid-template-columns:1fr}
+  .xxh-join{padding:34px 24px}
+  .xxh-hero{padding:38px 0 46px}
+  .xxh-section{padding:48px 0}
+  .xxh-art-float{display:none}
+  .xxh-share-list{grid-template-columns:1fr}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 + 页头 -->
+<div class="xxh-sticky-top">
+  <div class="xxh-notice">
+    <span class="xxh-notice-badge">官方发布</span>
+    <span class="xxh-notice-text">冬季企划《手绘的<strong>温度</strong>》第 3 期已上线，同步新增「小小绘」角色设定档案与幕后速写 12 页</span>
+    <a class="xxh-notice-link" href="#xxh-log">查看全部更新 →</a>
+  </div>
+  <header class="xxh-header">
+    <div class="xxh-wrap xxh-header-inner">
+      <a class="xxh-logo" href="#xxh-top">
+        <span class="xxh-logo-mark">小</span>
+        <span class="xxh-logo-txt"><b>小小绘</b><span>XIAOXIAO HUI</span></span>
+      </a>
+      <nav class="xxh-nav" id="xxhNav">
+        <a href="#xxh-top" class="is-active">首页</a>
+        <a href="#xxh-focus">焦点内容</a>
+        <a href="#xxh-videos">作品流</a>
+        <a href="#xxh-topics">专题企划</a>
+        <a href="#xxh-makers">创作者</a>
+        <a href="#xxh-log">企业动态</a>
+        <a href="#xxh-faq">帮助</a>
+        <a href="#xxh-join">联系投稿</a>
+      </nav>
+      <div class="xxh-search">
+        <input type="search" id="xxhSearch" placeholder="搜索绘作 / 专题 / 创作者" aria-label="站内搜索">
+        <button type="button" id="xxhSearchBtn" aria-label="搜索">⌕</button>
+        <div class="xxh-search-tip" id="xxhSearchTip"></div>
+      </div>
+      <button class="xxh-burger" id="xxhBurger" aria-label="展开导航" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+</div>
+
+<main id="xxh-top">
+
+  <!-- 首屏 -->
+  <section class="xxh-hero">
+    <div class="xxh-wrap xxh-hero-grid">
+      <div>
+        <span class="xxh-eyebrow">插画创作者官方网站</span>
+        <h1>小小绘</h1>
+        <p class="xxh-hero-sub">独立插画创作者「小小」的原创绘作平台与企业级内容门户。用手绘记录日常，用线条讲述真实，与社区一同生长。</p>
+        <div class="xxh-hero-actions">
+          <a class="xxh-btn xxh-btn-primary" href="#xxh-videos">浏览精品内容</a>
+          <a class="xxh-btn xxh-btn-ghost" href="#xxh-about">品牌故事</a>
+          <button class="xxh-btn xxh-btn-amber" type="button" id="xxhShareBtnHero">分享本站</button>
+        </div>
+        <div class="xxh-hero-stats">
+          <div class="xxh-stat"><b data-count="486">0</b><span>原创绘作</span></div>
+          <div class="xxh-stat"><b data-count="126000">0</b><span>社区关注</span></div>
+          <div class="xxh-stat"><b data-count="7">0</b><span>持续运营年数</span></div>
+        </div>
+      </div>
+      <div class="xxh-hero-art">
+        <div class="xxh-art-main">
+          <svg viewBox="0 0 640 460" role="img" aria-label="小小绘品牌视觉：暖色手绘插画工作台" style="width:100%;height:auto;display:block">
+            <defs>
+              <linearGradient id="xxhBgA" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#fbefd6"/><stop offset="1" stop-color="#e9dfef"/>
+              </linearGradient>
+              <linearGradient id="xxhSkyA" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffd79b"/><stop offset="1" stop-color="#f7b955"/>
+              </linearGradient>
+            </defs>
+            <rect width="640" height="460" fill="url(#xxhBgA)"/>
+            <circle cx="495" cy="105" r="66" fill="url(#xxhSkyA)" opacity=".9"/>
+            <path d="M0 340 Q120 280 250 330 T520 316 T640 352 V460 H0 Z" fill="#2f8f9d" opacity=".22"/>
+            <path d="M0 372 Q140 322 288 362 T640 380 V460 H0 Z" fill="#2f8f9d" opacity=".38"/>
+            <rect x="72" y="236" width="240" height="150" rx="12" fill="#fffdf8" stroke="#1b1d29" stroke-width="3"/>
+            <path d="M72 236 L192 160 L312 236 Z" fill="#f7b955" stroke="#1b1d29" stroke-width="3" stroke-linejoin="round"/>
+            <rect x="150" y="286" width="82" height="100" rx="6" fill="#e08a1e" opacity=".85"/>
+            <rect x="106" y="276" width="30" height="30" rx="4" fill="#5ec8d6"/>
+            <rect x="246" y="276" width="30" height="30" rx="4" fill="#6c5ce7" opacity=".7"/>
+            <path d="M352 384 c30 -70 66 -112 82 -112 c18 0 6 56 26 56 c14 0 18 -34 38 -48" fill="none" stroke="#1b1d29" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="360" cy="196" r="9" fill="#e08a1e"/>
+            <circle cx="410" cy="168" r="5" fill="#2f8f9d"/>
+            <path d="M480 250 l38 -22 l0 44 z" fill="#fffdf8" stroke="#1b1d29" stroke-width="3" stroke-linejoin="round"/>
+            <rect x="470" y="286" width="120" height="12" rx="6" fill="#fffdf8" stroke="#1b1d29" stroke-width="2"/>
+            <rect x="486" y="302" width="88" height="12" rx="6" fill="#fffdf8" stroke="#1b1d29" stroke-width="2"/>
+            <text x="72" y="430" font-family="Georgia,serif" font-size="15" fill="#5c5648" letter-spacing="3">XIAOXIAO HUI · ORIGINAL ILLUSTRATION</text>
+          </svg>
+        </div>
+        <div class="xxh-art-float xxh-float-a"><b>本周更新 6 幅</b>角色设定与速写</div>
+        <div class="xxh-art-float xxh-float-b"><b>《线稿的力量》</b>专题连载中</div>
+        <div class="xxh-art-float xxh-float-c"><b>2026 冬季共创</b>投稿开放中</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 品牌与关键词深度解析 -->
+  <section class="xxh-section xxh-about" id="xxh-about">
+    <div class="xxh-wrap xxh-about-inner">
+      <aside class="xxh-about-side">
+        <div class="xxh-side-sticky">
+          <span class="xxh-sec-kicker">BRAND STORY</span>
+          <h2>一支笔，<br>和一个<i>持续生长</i>的绘作社区</h2>
+          <p>「小小绘」不是一个人的作品集，而是一个围绕手绘与原创插画长期运营的内容生态。这里记录了创作者的每一次落笔，也记录了社区里每一份被看见的喜欢。</p>
+          <div class="xxh-side-mini">
+            品牌定位：原创插画 · 创作记录 · 社区共创<br>
+            内容方向：手绘插画、创作幕后、角色设定、同好互动
+          </div>
+        </div>
+      </aside>
+      <div class="xxh-about-body">
+        <h3>关于小小绘：一个插画创作者品牌的官方门户</h3>
+        <p>小小绘官方网站于 2020 年正式上线，由独立插画创作者「小小」发起并持续运营。它最初只是一个发布日常速写的小角落，随着作品积累与社区参与，逐渐发展为一个兼具作品陈列、创作教学、同好交流与企划共创的插画内容平台。“小小”既是创作者的自称，也代表着一种创作态度：不追求宏大的叙事，而从细小的事物里找到可以被画下来的温度——一只打盹的猫、一杯放凉的茶、傍晚街道上被拉长的影子，都可能成为下一幅作品的起点。</p>
+        <p>作为插画领域的垂直品牌，小小绘始终把<strong>原创</strong>放在第一位。平台上所有公开发布的主视觉、角色设定、分镜草稿与系列插画，均来自创作者本人及其合作作者的原创绘制，配有完整的创作时间线、笔刷记录与过程分镜。这种“把过程也当作内容”的做法，让不少刚接触手绘的爱好者第一次意识到：一张干净的线稿背后，可能有十几次推翻重画。企业级的内容管理也让每一幅作品都具备可追溯的来源信息，方便社区成员引用、学习与二次交流。</p>
+        <div class="xxh-quote">
+          <b>创作理念：</b>比起“画得好”，小小绘更在意“画得真”。真实的情绪、真实的笨拙、真实的反复，才是一幅画能够被记住的原因。这个理念贯穿了品牌的所有内容企划与社区规则。
+        </div>
+
+        <h3>小小绘的内容体系：从单幅作品到长期企划</h3>
+        <p>在内容结构上，小小绘将发布内容划分为四个长期栏目。<strong>「日常速写」</strong>记录创作者在生活现场捕捉的片段，强调即时与松弛；<strong>「完整绘作」</strong>呈现经过反复打磨的成稿作品，包含分层线稿、上色过程与配色思路；<strong>「角色档案」</strong>则围绕原创角色展开，为每个角色建立性格、背景故事与视觉设定；<strong>「幕后记录」</strong>把镜头对准创作本身，讲清楚一幅画是怎么被画出来的，也坦诚分享卡壳、返工与放弃的部分。四个栏目相互支撑，构成了一个完整、连续、可长期追更的内容生态。</p>
+        <p>除了栏目化内容，小小绘每年还会发起 2 至 3 次主题企划。例如面向社区的共创活动「冬日绘签」，邀请同好按照统一的角色设定创作衍生插画；再如连续三年的「线稿的力量」专题，专门讨论在缺少颜色辅助的情况下，如何用线条表达体积、情绪与节奏。这些企划让平台不仅是作品展示窗口，也成为创作者彼此交流、互相启发的场所。每一期企划都会在官方公告条与动态区同步公开投稿规则、评选方式与最终入选名单，保证过程的透明与公信力。</p>
+
+        <h3>为什么创作者与爱好者选择小小绘</h3>
+        <p>对社区成员来说，小小绘最被认可的地方在于“可学”。很多插画类内容只给出结果，而小小绘习惯把中间过程完整保留：这一笔为什么先画、那个高光为什么最后补、构图为什么在第三版才定下来。这些看似琐碎的细节，恰恰是初学者最需要、也最难获得的部分。平台因此积累了一批稳定回访的用户，他们在评论区讨论笔刷、讨论纸张、讨论如何在通勤路上完成一张十分钟速写，逐渐形成了一种温和而专注的交流氛围。</p>
+        <p>对合作方而言，小小绘的价值在于<strong>专注与品质</strong>。品牌不追求内容数量的快速堆叠，而是保持稳定的更新节奏与较高的完成度标准。每一幅对外发布的主视觉都会经过多轮自查，确认构图、配色与叙事逻辑自洽后才正式上线。这种克制使得小小绘在插画细分领域建立了较好的口碑，也让平台在承接出版插画、品牌联名与线下展览合作时，能够提供风格统一、质量可靠的原创内容。</p>
+
+        <h3>小小绘的未来：让更多人拿起笔</h3>
+        <p>面向未来，小小绘计划进一步开放创作工具与学习资源：一方面完善“创作灵感”板块，为社区成员提供构图建议、配色参考与脚本思路；另一方面逐步开放线上共创空间，让不同城市的插画爱好者可以围绕同一主题同步创作、互相点评。平台也将持续记录并公开品牌成长的关键节点，包括企划成果、合作发布与社区数据，让官网成为一份可被翻阅的成长档案。</p>
+        <p>我们相信，插画的意义不只在于被观看，更在于它能让人愿意停下来，认真看看身边那些容易被忽略的小事。小小绘希望以官方网站为起点，把这个简单的愿望，变成一件可以长期做下去的事。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 焦点内容 -->
+  <section class="xxh-section xxh-section--alt" id="xxh-focus">
+    <div class="xxh-wrap">
+      <div class="xxh-sec-head">
+        <div>
+          <span class="xxh-sec-kicker">FOCUS</span>
+          <h2>本周<i>焦点</i>内容</h2>
+          <p class="xxh-sec-desc">由小小绘官方编辑挑选的近期重点绘作与企划，涵盖完整绘制流程、角色设定与社区活动。</p>
+        </div>
+        <a class="xxh-sec-link" href="#xxh-videos">全部作品 →</a>
+      </div>
+      <div class="xxh-focus-grid">
+        <article class="xxh-focus-main">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232b2f45'/%3E%3Cstop offset='1' stop-color='%234a3a5c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='500' fill='url(%23g1)'/%3E%3Ccircle cx='610' cy='130' r='86' fill='%23f7b955' opacity='.9'/%3E%3Cpath d='M0 380 Q170 300 340 366 T800 396 V500 H0 Z' fill='%235ec8d6' opacity='.25'/%3E%3Cpath d='M80 330 q60 -110 130 -10 q50 -90 120 10' fill='none' stroke='%23fffdf8' stroke-width='5' stroke-linecap='round' opacity='.8'/%3E%3Crect x='120' y='150' width='190' height='150' rx='10' fill='%23fffdf8' opacity='.95'/%3E%3Cpath d='M120 150 L215 92 L310 150 Z' fill='%23e08a1e'/%3E%3Crect x='196' y='210' width='60' height='90' fill='%232b2f45' opacity='.25'/%3E%3Ctext x='60' y='452' fill='%23e9e4d8' font-size='23' font-family='Georgia,serif' letter-spacing='4'%3EWINTER SERIES / VOL.03%3C/text%3E%3C/svg%3E" alt="冬季企划《手绘的温度》第三期主视觉插画">
+          <div class="xxh-focus-overlay">
+            <span class="xxh-tag-inline">专题 · 完整绘作</span>
+            <h3>《手绘的温度》第 3 期：用暖色画一间亮着灯的屋子</h3>
+            <p>从草稿到成稿的完整 11 步记录，含配色逻辑与笔刷说明，附社区共创投稿入口。</p>
+            <div class="xxh-vmeta" style="color:#c7c2b6">
+              <span class="xxh-avatar-s" style="background:#e08a1e">小</span> 小小 · 2026-11-12 · 18 分钟阅读
+            </div>
+          </div>
+        </article>
+        <div class="xxh-focus-side">
+          <article class="xxh-mini-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f5e9d6'/%3E%3Ccircle cx='150' cy='120' r='58' fill='%23f7b955'/%3E%3Cpath d='M78 232 q72 -78 144 0' fill='%232f8f9d' opacity='.6'/%3E%3Ccircle cx='128' cy='108' r='7' fill='%231b1d29'/%3E%3Ccircle cx='172' cy='108' r='7' fill='%231b1d29'/%3E%3Cpath d='M136 142 q14 12 28 0' fill='none' stroke='%231b1d29' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E" alt="原创角色「阿栗」设定档案封面插画">
+            <div class="xxh-mini-body">
+              <h4>角色档案：阿栗的三套冬季造型</h4>
+              <span>设定 · 角色 · 8 分钟</span>
+            </div>
+          </article>
+          <article class="xxh-mini-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23e8eef0'/%3E%3Cpath d='M40 250 L110 90 L180 250 Z' fill='%232f8f9d' opacity='.55'/%3E%3Cpath d='M150 250 L215 110 L280 250 Z' fill='%236c5ce7' opacity='.4'/%3E%3Ccircle cx='95' cy='70' r='26' fill='%23f7b955'/%3E%3Crect x='40' y='262' width='240' height='6' rx='3' fill='%231b1d29' opacity='.3'/%3E%3C/svg%3E" alt="线稿的力量专题第三季封面图">
+            <div class="xxh-mini-body">
+              <h4>线稿的力量第三季：留白与呼吸感</h4>
+              <span>专题 · 技巧 · 12 分钟</span>
+            </div>
+          </article>
+          <article class="xxh-mini-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%232b2f45'/%3E%3Ccircle cx='150' cy='150' r='78' fill='none' stroke='%235ec8d6' stroke-width='5'/%3E%3Cpath d='M150 92 v58 l42 28' fill='none' stroke='%23f7b955' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='150' cy='150' r='8' fill='%23f7b955'/%3E%3C/svg%3E" alt="十分钟速写挑战活动封面图">
+            <div class="xxh-mini-body">
+              <h4>十分钟速写挑战：本轮主题「通勤」</h4>
+              <span>活动 · 共创 · 报名中</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 作品流 -->
+  <section class="xxh-section" id="xxh-videos">
+    <div class="xxh-wrap">
+      <div class="xxh-sec-head">
+        <div>
+          <span class="xxh-sec-kicker">WORKS</span>
+          <h2>精品<i>绘作</i>流</h2>
+          <p class="xxh-sec-desc">按更新时间排列的近期发布内容，支持点赞、收藏与分享。所有内容均为小小绘官方原创发布。</p>
+        </div>
+        <a class="xxh-sec-link" href="#xxh-topics">看专题企划 →</a>
+      </div>
+      <div class="xxh-video-grid" id="xxhVideoGrid">
+
+        <article class="xxh-vcard">
+          <div class="xxh-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3ClinearGradient id='c1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ffe3b0'/%3E%3Cstop offset='1' stop-color='%23f7b955'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='url(%23c1)'/%3E%3Cpath d='M0 210 Q120 168 240 206 T480 214 V270 H0 Z' fill='%23e08a1e' opacity='.45'/%3E%3Ccircle cx='356' cy='80' r='42' fill='%23fffdf8' opacity='.9'/%3E%3Cpath d='M120 200 v-70 h52 v70' fill='%23fffdf8' opacity='.95'/%3E%3Cpath d='M110 130 L146 102 L182 130 Z' fill='%232b2f45'/%3E%3Crect x='212' y='150' width='26' height='26' fill='%232f8f9d'/%3E%3Crect x='250' y='150' width='26' height='26' fill='%236c5ce7' opacity='.6'/%3E%3C/svg%3E" alt="傍晚街角速写作品封面">
+            <span class="xxh-cover-tag">日常速写</span>
+            <span class="xxh-cover-dur">06:42</span>
+          </div>
+          <div class="xxh-vbody">
+            <h3>傍晚六点的街角：一张十分钟速写的完整记录</h3>
+            <p>从天桥下等到路灯亮起，用最少的线条抓住行人经过时的那种匆忙感。附现场取景思路与线条取舍说明。</p>
+            <div class="xxh-vmeta"><span class="xxh-avatar-s" style="background:#e08a1e">小</span> 小小 · 2.1 万次浏览</div>
+            <div class="xxh-vacts">
+              <button class="xxh-act" data-like>♡ <span>386</span></button>
+              <button class="xxh-act" data-save>♡ 收藏</button>
+              <button class="xxh-act" data-share>↗ 分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="xxh-vcard">
+          <div class="xxh-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23eef3f4'/%3E%3Cg stroke='%232f8f9d' stroke-width='3' fill='none'%3E%3Cpath d='M60 220 q40 -120 120 -120 q80 0 120 120'/%3E%3Cpath d='M120 220 q20 -70 60 -70 q40 0 60 70'/%3E%3Cpath d='M170 220 v-40'/%3E%3C/g%3E%3Ccircle cx='360' cy='90' r='30' fill='%23f7b955' opacity='.85'/%3E%3Crect x='300' y='160' width='120' height='60' rx='8' fill='%23fffdf8' stroke='%231b1d29' stroke-width='2'/%3E%3Cpath d='M320 190 h80 M320 204 h56' stroke='%239b9485' stroke-width='3'/%3E%3C/svg%3E" alt="线条练习教程封面图">
+            <span class="xxh-cover-tag">教程干货</span>
+            <span class="xxh-cover-dur">12:15</span>
+          </div>
+          <div class="xxh-vbody">
+            <h3>线条为什么总是抖？四个练习帮你稳住手腕</h3>
+            <p>把“画不好线”拆成三个具体问题：发力方式、呼吸节奏与落笔速度，并给出每天十分钟的可执行练习方案。</p>
+            <div class="xxh-vmeta"><span class="xxh-avatar-s" style="background:#2f8f9d">林</span> 林间铅笔 · 3.4 万次浏览</div>
+            <div class="xxh-vacts">
+              <button class="xxh-act" data-like>♡ <span>912</span></button>
+              <button class="xxh-act" data-save>♡ 收藏</button>
+              <button class="xxh-act" data-share>↗ 分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="xxh-vcard">
+          <div class="xxh-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23242533'/%3E%3Ccircle cx='240' cy='140' r='92' fill='%236c5ce7' opacity='.35'/%3E%3Ccircle cx='240' cy='140' r='58' fill='%235ec8d6' opacity='.55'/%3E%3Cpath d='M160 190 q80 -130 160 0' fill='none' stroke='%23f7b955' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='216' cy='128' r='6' fill='%23fffdf8'/%3E%3Ccircle cx='264' cy='128' r='6' fill='%23fffdf8'/%3E%3C/svg%3E" alt="原创角色阿栗角色访谈封面图">
+            <span class="xxh-cover-tag">人物访谈</span>
+            <span class="xxh-cover-dur">09:30</span>
+          </div>
+          <div class="xxh-vbody">
+            <h3>和阿栗聊了聊：一个角色是怎么慢慢长出自己的性格的</h3>
+            <p>从一张随手涂鸦到拥有完整背景故事的角色，中间经历了三次推翻。访谈里聊到了设定、克制与“不要过度解释”。</p>
+            <div class="xxh-vmeta"><span class="xxh-avatar-s" style="background:#6c5ce7">七</span> 七号画室 · 1.8 万次浏览</div>
+            <div class="xxh-vacts">
+              <button class="xxh-act" data-like>♡ <span>540</span></button>
+              <button class="xxh-act" data-save>♡ 收藏</button>
+              <button class="xxh-act" data-share>↗ 分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="xxh-vcard">
+          <div class="xxh-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23f2efe6'/%3E%3Crect x='50' y='50' width='160' height='170' rx='8' fill='%23fffdf8' stroke='%231b1d29' stroke-width='2'/%3E%3Cpath d='M70 90 h120 M70 114 h120 M70 138 h88' stroke='%23c9c2b0' stroke-width='4'/%3E%3Crect x='250' y='70' width='180' height='130' rx='8' fill='%232f8f9d' opacity='.2' stroke='%232f8f9d' stroke-width='2'/%3E%3Cpath d='M272 176 l34 -54 l30 34 l24 -22 l30 42 Z' fill='%232f8f9d' opacity='.65'/%3E%3Ccircle cx='396' cy='106' r='14' fill='%23f7b955'/%3E%3C/svg%3E" alt="构图拆解测评封面图">
+            <span class="xxh-cover-tag">深度测评</span>
+            <span class="xxh-cover-dur">15:08</span>
+          </div>
+          <div class="xxh-vbody">
+            <h3>对比了 6 种常见构图：为什么你的画面总是“有点空”</h3>
+            <p>用同一组素材做了六版构图实验，逐一分析视觉重心、留白比例与引导线走向，最后给出通用自查清单。</p>
+            <div class="xxh-vmeta"><span class="xxh-avatar-s" style="background:#c8891f">构</span> 构图研究室 · 4.6 万次浏览</div>
+            <div class="xxh-vacts">
+              <button class="xxh-act" data-like>♡ <span>1263</span></button>
+              <button class="xxh-act" data-save>♡ 收藏</button>
+              <button class="xxh-act" data-share>↗ 分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="xxh-vcard">
+          <div class="xxh-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23e9efe2'/%3E%3Cpath d='M0 220 Q130 170 260 214 T480 206 V270 H0 Z' fill='%233f7a4a' opacity='.5'/%3E%3Cpath d='M0 244 Q160 214 320 246 T480 240 V270 H0 Z' fill='%233f7a4a' opacity='.8'/%3E%3Crect x='196' y='96' width='88' height='88' rx='10' fill='%23fffdf8' stroke='%231b1d29' stroke-width='3'/%3E%3Cpath d='M226 140 l16 18 l26 -32' fill='none' stroke='%233f7a4a' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" alt="每日打卡计划封面图">
+            <span class="xxh-cover-tag">经验分享</span>
+            <span class="xxh-cover-dur">07:56</span>
+          </div>
+          <div class="xxh-vbody">
+            <h3>连续 90 天每天画一张，我把打卡这件事做成了习惯</h3>
+            <p>不是靠毅力，而是靠降低门槛：固定时间、固定尺寸、允许画得难看。分享三个真正有效的自我管理小技巧。</p>
+            <div class="xxh-vmeta"><span class="xxh-avatar-s" style="background:#3f7a4a">禾</span> 禾木手记 · 2.9 万次浏览</div>
+            <div class="xxh-vacts">
+              <button class="xxh-act" data-like>♡ <span>734</span></button>
+              <button class="xxh-act" data-save>♡ 收藏</button>
+              <button class="xxh-act" data-share>↗ 分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="xxh-vcard">
+          <div class="xxh-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23f6e9ee'/%3E%3Ccircle cx='140' cy='130' r='58' fill='%23e8a8bf' opacity='.8'/%3E%3Ccircle cx='300' cy='150' r='72' fill='%23c9a3d8' opacity='.6'/%3E%3Cpath d='M60 232 q60 -30 120 0 q60 30 120 0 q60 -30 120 0' fill='none' stroke='%238a5a74' stroke-width='4' opacity='.5'/%3E%3Crect x='196' y='80' width='88' height='120' rx='6' fill='%23fffdf8' opacity='.9'/%3E%3Cpath d='M214 104 h52 M214 122 h52 M214 140 h34' stroke='%23b58aa0' stroke-width='3'/%3E%3C/svg%3E" alt="水彩上色过程封面图">
+            <span class="xxh-cover-tag">创作幕后</span>
+            <span class="xxh-cover-dur">11:20</span>
+          </div>
+          <div class="xxh-vbody">
+            <h3>水彩叠加的先后顺序：一次失败的示范与修正</h3>
+            <p>把画坏的那一张也放出来。从水分控制到颜色覆盖，复盘了这次翻车的三个原因，以及重画后的处理方式。</p>
+            <div class="xxh-vmeta"><span class="xxh-avatar-s" style="background:#a5688a">梨</span> 梨白 · 1.4 万次浏览</div>
+            <div class="xxh-vacts">
+              <button class="xxh-act" data-like>♡ <span>402</span></button>
+              <button class="xxh-act" data-save>♡ 收藏</button>
+              <button class="xxh-act" data-share>↗ 分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="xxh-vcard">
+          <div class="xxh-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%231b2a33'/%3E%3Ccircle cx='360' cy='70' r='34' fill='%23f7b955' opacity='.9'/%3E%3Crect x='40' y='120' width='60' height='110' fill='%232f8f9d' opacity='.55'/%3E%3Crect x='108' y='92' width='54' height='138' fill='%232f8f9d' opacity='.7'/%3E%3Crect x='170' y='130' width='48' height='100' fill='%235ec8d6' opacity='.5'/%3E%3Cpath d='M250 230 l40 -60 l38 60' fill='%23fffdf8' opacity='.8'/%3E%3Cpath d='M318 230 l34 -46 l30 46' fill='%23f7b955' opacity='.75'/%3E%3C/svg%3E" alt="城市夜景插画创作过程封面图">
+            <span class="xxh-cover-tag">城市探索</span>
+            <span class="xxh-cover-dur">10:04</span>
+          </div>
+          <div class="xxh-vbody">
+            <h3>把一条夜街画成插画：取景、简化与灯光处理</h3>
+            <p>城市写生最难的是信息量太大。这次用“只画三件事”的方法，把一条街压缩成一幅有呼吸感的画面。</p>
+            <div class="xxh-vmeta"><span class="xxh-avatar-s" style="background:#3b6d78">夜</span> 夜行画者 · 2.6 万次浏览</div>
+            <div class="xxh-vacts">
+              <button class="xxh-act" data-like>♡ <span>658</span></button>
+              <button class="xxh-act" data-save>♡ 收藏</button>
+              <button class="xxh-act" data-share>↗ 分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="xxh-vcard">
+          <div class="xxh-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23fff7e8'/%3E%3Crect x='90' y='60' width='300' height='160' rx='12' fill='%23fffdf8' stroke='%23e08a1e' stroke-width='3' stroke-dasharray='10 7'/%3E%3Ccircle cx='150' cy='140' r='26' fill='%23f7b955'/%3E%3Ccircle cx='230' cy='140' r='26' fill='%235ec8d6'/%3E%3Ccircle cx='310' cy='140' r='26' fill='%236c5ce7' opacity='.7'/%3E%3Cpath d='M120 190 h240' stroke='%23e08a1e' stroke-width='3'/%3E%3C/svg%3E" alt="配色方案对比封面图">
+            <span class="xxh-cover-tag">实用技巧</span>
+            <span class="xxh-cover-dur">08:48</span>
+          </div>
+          <div class="xxh-vbody">
+            <h3>三组配色方案，解决“颜色一多就乱”的老问题</h3>
+            <p>不用背色卡。先确定主色调的情绪，再用一个辅助色和一个点睛色收尾，附可直接照抄的三组搭配示例。</p>
+            <div class="xxh-vmeta"><span class="xxh-avatar-s" style="background:#c8891f">色</span> 调色盘小组 · 3.7 万次浏览</div>
+            <div class="xxh-vacts">
+              <button class="xxh-act" data-like>♡ <span>1048</span></button>
+              <button class="xxh-act" data-save>♡ 收藏</button>
+              <button class="xxh-act" data-share>↗ 分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="xxh-vcard">
+          <div class="xxh-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23e6e9f2'/%3E%3Cpath d='M60 200 q60 -90 120 -10 q50 -70 110 10 q50 -60 130 20' fill='none' stroke='%236c5ce7' stroke-width='5' stroke-linecap='round' opacity='.7'/%3E%3Crect x='150' y='60' width='180' height='110' rx='10' fill='%23fffdf8' stroke='%231b1d29' stroke-width='2'/%3E%3Cpath d='M176 92 h128 M176 112 h128 M176 132 h84' stroke='%23b6bdcd' stroke-width='4'/%3E%3Ccircle cx='400' cy='80' r='22' fill='%23f7b955'/%3E%3C/svg%3E" alt="脚本灵感工具封面图">
+            <span class="xxh-cover-tag">创作灵感</span>
+            <span class="xxh-cover-dur">05:10</span>
+          </div>
+          <div class="xxh-vbody">
+            <h3>卡壳的时候怎么办：五个能立刻用上的灵感启动法</h3>
+            <p>从限制条件入手，反而更容易开始。分享五个成本极低的小练习，适合在完全没想法的时候逼自己动笔。</p>
+            <div class="xxh-vmeta"><span class="xxh-avatar-s" style="background:#6c5ce7">灵</span> 灵光编辑室 · 1.1 万次浏览</div>
+            <div class="xxh-vacts">
+              <button class="xxh-act" data-like>♡ <span>297</span></button>
+              <button class="xxh-act" data-save>♡ 收藏</button>
+              <button class="xxh-act" data-share>↗ 分享</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 专题企划 -->
+  <section class="xxh-section xxh-section--alt" id="xxh-topics">
+    <div class="xxh-wrap">
+      <div class="xxh-sec-head">
+        <div>
+          <span class="xxh-sec-kicker">SERIES</span>
+          <h2>长期<i>专题</i>与企划</h2>
+          <p class="xxh-sec-desc">小小绘以专题形式沉淀内容，每一个专题都是一次完整、可追溯的创作旅程。</p>
+        </div>
+      </div>
+      <div class="xxh-topic-grid">
+        <article class="xxh-topic">
+          <div class="xxh-topic-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23f6ead4'/%3E%3Cpath d='M0 200 Q130 150 260 196 T480 188 V270 H0 Z' fill='%23e08a1e' opacity='.4'/%3E%3Crect x='180' y='70' width='120' height='100' rx='8' fill='%23fffdf8' stroke='%231b1d29' stroke-width='3'/%3E%3Cpath d='M180 70 L240 30 L300 70 Z' fill='%23f7b955'/%3E%3Crect x='216' y='112' width='48' height='58' fill='%232f8f9d' opacity='.5'/%3E%3C/svg%3E" alt="手绘的温度冬季连载专题封面">
+          </div>
+          <div class="xxh-topic-body">
+            <span class="xxh-topic-state xxh-state-live">连载中 · 第 3 期</span>
+            <h3>手绘的温度</h3>
+            <p>每年冬季固定更新的暖色系创作专题，围绕“让人感到暖”的场景展开，包含完整绘制流程与社区共创投稿。</p>
+            <div class="xxh-topic-meta"><span>共 14 期</span><span>更新至 11 月</span><span>已入 320 份投稿</span></div>
+          </div>
+        </article>
+        <article class="xxh-topic">
+          <div class="xxh-topic-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23eceef4'/%3E%3Cg stroke='%232b2f45' stroke-width='3' fill='none'%3E%3Cpath d='M70 220 q30 -110 90 -90 q60 20 40 80'/%3E%3Cpath d='M250 220 q20 -90 80 -80 q60 10 70 80'/%3E%3C/g%3E%3Ccircle cx='110' cy='70' r='20' fill='%23f7b955'/%3E%3Crect x='200' y='40' width='14' height='40' rx='7' fill='%236c5ce7' opacity='.6'/%3E%3C/svg%3E" alt="线稿的力量专题封面">
+          </div>
+          <div class="xxh-topic-body">
+            <span class="xxh-topic-state xxh-state-live">已完结 · 第三季</span>
+            <h3>线稿的力量</h3>
+            <p>专门讨论线条表达的长线专题：体积、节奏、情绪与留白。三季共收录 42 篇图文与 18 段过程记录。</p>
+            <div class="xxh-topic-meta"><span>共 42 篇</span><span>已完结</span><span>口碑专题</span></div>
+          </div>
+        </article>
+        <article class="xxh-topic">
+          <div class="xxh-topic-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23e7f0ee'/%3E%3Ccircle cx='160' cy='120' r='44' fill='%232f8f9d' opacity='.55'/%3E%3Ccircle cx='250' cy='150' r='30' fill='%23f7b955'/%3E%3Ccircle cx='330' cy='110' r='36' fill='%236c5ce7' opacity='.45'/%3E%3Cpath d='M60 226 h360' stroke='%231b1d29' stroke-width='3' opacity='.3'/%3E%3Cpath d='M210 60 l10 24 l24 10 l-24 10 l-10 24 l-10 -24 l-24 -10 l24 -10 Z' fill='%23fffdf8' stroke='%231b1d29' stroke-width='2'/%3E%3C/svg%3E" alt="十分钟速写挑战社区企划封面">
+          </div>
+          <div class="xxh-topic-body">
+            <span class="xxh-topic-state xxh-state-soon">报名中 · 第 8 轮</span>
+            <h3>十分钟速写挑战</h3>
+            <p>面向全体社区成员的限时速写活动，本轮主题为「通勤」。提交作品即可参与投票，优秀作品将进入官方作品墙。</p>
+            <div class="xxh-topic-meta"><span>报名 12 月截止</span><span>已报名 186 位</span><span>社区共创</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 创作者矩阵 -->
+  <section class="xxh-section" id="xxh-makers">
+    <div class="xxh-wrap">
+      <div class="xxh-sec-head">
+        <div>
+          <span class="xxh-sec-kicker">CREATORS</span>
+          <h2>社区<i>创作者</i>矩阵</h2>
+          <p class="xxh-sec-desc">来自不同城市与方向的插画创作者，在小小绘持续输出原创内容。点击可查看作者公开档案。</p>
+        </div>
+      </div>
+      <div class="xxh-maker-grid">
+        <article class="xxh-maker">
+          <div class="xxh-maker-top">
+            <div class="xxh-avatar-l" style="background:#e08a1e">小</div>
+            <div><h3>小小</h3><span>品牌主创 · 日常速写</span></div>
+          </div>
+          <p>小小绘发起人，擅长用简练线条捕捉生活片段，坚持每年完成 300 张以上速写，作品风格偏向松弛与叙事性。</p>
+          <div class="xxh-maker-stats"><span><b>186</b>作品</span><span><b>8.6万</b>关注</span><span><b>2020</b>入驻</span></div>
+          <button class="xxh-btn xxh-btn-ghost" data-maker="小小｜品牌主创，擅长日常速写与叙事性线条表达。坚持每年完成 300 张以上速写，长期主持「手绘的温度」与「十分钟速写挑战」两个专题企划。">查看档案</button>
+        </article>
+        <article class="xxh-maker">
+          <div class="xxh-maker-top">
+            <div class="xxh-avatar-l" style="background:#2f8f9d">林</div>
+            <div><h3>林间铅笔</h3><span>线条教学 · 教程干货</span></div>
+          </div>
+          <p>专注基础线条与手部控制训练，课程类内容结构清晰、可执行性强，是许多社区成员入门手绘的第一站。</p>
+          <div class="xxh-maker-stats"><span><b>94</b>作品</span><span><b>5.2万</b>关注</span><span><b>2021</b>入驻</span></div>
+          <button class="xxh-btn xxh-btn-ghost" data-maker="林间铅笔｜线条教学方向创作者，内容以可执行的手绘基础训练为主，善于把抽象问题拆解为具体练习步骤。">查看档案</button>
+        </article>
+        <article class="xxh-maker">
+          <div class="xxh-maker-top">
+            <div class="xxh-avatar-l" style="background:#6c5ce7">七</div>
+            <div><h3>七号画室</h3><span>角色设定 · 人物访谈</span></div>
+          </div>
+          <p>擅长原创角色设计，注重角色的内在逻辑与性格一致，作品常以设定档案与创作访谈的形式呈现。</p>
+          <div class="xxh-maker-stats"><span><b>72</b>作品</span><span><b>4.4万</b>关注</span><span><b>2021</b>入驻</span></div>
+          <button class="xxh-btn xxh-btn-ghost" data-maker="七号画室｜角色设定方向创作者，作品围绕原创角色的性格、背景与视觉一致性展开，主张“角色先立住，再画好看”。">查看档案</button>
+        </article>
+        <article class="xxh-maker">
+          <div class="xxh-maker-top">
+            <div class="xxh-avatar-l" style="background:#3f7a4a">禾</div>
+            <div><h3>禾木手记</h3><span>习惯养成 · 日常记录</span></div>
+          </div>
+          <p>用画日记的方式记录生活，擅长把长期坚持的经验整理成轻量方法，鼓励更多人把画画变成日常。</p>
+          <div class="xxh-maker-stats"><span><b>128</b>作品</span><span><b>3.9万</b>关注</span><span><b>2022</b>入驻</span></div>
+          <button class="xxh-btn xxh-btn-ghost" data-maker="禾木手记｜日常记录方向创作者，以连续打卡与画日记为内容核心，分享真正可坚持的创作习惯与方法。">查看档案</button>
+        </article>
+        <article class="xxh-maker">
+          <div class="xxh-maker-top">
+            <div class="xxh-avatar-l" style="background:#a5688a">梨</div>
+            <div><h3>梨白</h3><span>水彩 · 创作幕后</span></div>
+          </div>
+          <p>水彩爱好者，习惯把失败过程也完整放出，作品语气温柔，常被评价为“看完也想拿起笔试试”。</p>
+          <div class="xxh-maker-stats"><span><b>61</b>作品</span><span><b>2.7万</b>关注</span><span><b>2022</b>入驻</span></div>
+          <button class="xxh-btn xxh-btn-ghost" data-maker="梨白｜水彩方向创作者，内容侧重创作过程的真实呈现，包括失败、复盘与重画，强调“过程也值得被记录”。">查看档案</button>
+        </article>
+        <article class="xxh-maker">
+          <div class="xxh-maker-top">
+            <div class="xxh-avatar-l" style="background:#3b6d78">夜</div>
+            <div><h3>夜行画者</h3><span>城市写生 · 建筑记录</span></div>
+          </div>
+          <p>白天上班、夜里画画的业余创作者，长期记录城市夜景与街巷角落，为城市留下大量细小的视觉档案。</p>
+          <div class="xxh-maker-stats"><span><b>110</b>作品</span><span><b>3.1万</b>关注</span><span><b>2023</b>入驻</span></div>
+          <button class="xxh-btn xxh-btn-ghost" data-maker="夜行画者｜城市写生方向创作者，专注于夜街与建筑角落的插画记录，用画面保留城市中容易被忽略的光与结构。">查看档案</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 作品墙 -->
+  <section class="xxh-section xxh-section--alt" id="xxh-wall">
+    <div class="xxh-wrap">
+      <div class="xxh-sec-head">
+        <div>
+          <span class="xxh-sec-kicker">GALLERY</span>
+          <h2>社区<i>影像</i>墙</h2>
+          <p class="xxh-sec-desc">从近期社区发布中挑选的插画片段，涵盖速写、角色、场景与练习稿。所有作品版权归创作者所有。</p>
+        </div>
+      </div>
+      <div class="xxh-wall">
+        <figure class="xxh-wall-item w2 h2">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 500'%3E%3Cdefs%3E%3ClinearGradient id='w1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ffe6bb'/%3E%3Cstop offset='1' stop-color='%23f6a93c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='500' fill='url(%23w1)'/%3E%3Ccircle cx='470' cy='140' r='70' fill='%23fffdf8' opacity='.85'/%3E%3Cpath d='M0 350 Q160 280 320 344 T640 352 V500 H0 Z' fill='%232f8f9d' opacity='.32'/%3E%3Cpath d='M120 320 v-90 h90 v90' fill='%23fffdf8' stroke='%232b2f45' stroke-width='3'/%3E%3Cpath d='M104 230 L165 184 L226 230 Z' fill='%232b2f45'/%3E%3Crect x='150' y='262' width='30' height='30' fill='%23e08a1e'/%3E%3C/svg%3E" alt="暖色街道与屋顶场景插画作品">
+          <figcaption>暖色傍晚 · 街道与屋顶</figcaption>
+        </figure>
+        <figure class="xxh-wall-item">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 320'%3E%3Crect width='320' height='320' fill='%23e9eff1'/%3E%3Ccircle cx='160' cy='150' r='62' fill='%23f7b955'/%3E%3Crect x='122' y='196' width='76' height='90' rx='10' fill='%232f8f9d' opacity='.7'/%3E%3Ccircle cx='140' cy='140' r='7' fill='%231b1d29'/%3E%3Ccircle cx='180' cy='140' r='7' fill='%231b1d29'/%3E%3C/svg%3E" alt="原创角色头像练习插画">
+          <figcaption>角色头像练习</figcaption>
+        </figure>
+        <figure class="xxh-wall-item">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 320'%3E%3Crect width='320' height='320' fill='%23f2e9f0'/%3E%3Cpath d='M50 260 q50 -140 110 -140 q60 0 110 140' fill='%23c9a3d8' opacity='.5'/%3E%3Crect x='130' y='80' width='60' height='90' rx='6' fill='%23fffdf8' stroke='%231b1d29' stroke-width='2'/%3E%3Cpath d='M144 104 h32 M144 122 h32 M144 140 h20' stroke='%23a5688a' stroke-width='3'/%3E%3C/svg%3E" alt="水彩静物练习插画作品">
+          <figcaption>水彩静物练习</figcaption>
+        </figure>
+        <figure class="xxh-wall-item w2">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 320'%3E%3Crect width='640' height='320' fill='%231f2430'/%3E%3Ccircle cx='520' cy='80' r='40' fill='%23f7b955' opacity='.9'/%3E%3Crect x='50' y='180' width='70' height='140' fill='%232f8f9d' opacity='.5'/%3E%3Crect x='130' y='140' width='56' height='180' fill='%232f8f9d' opacity='.68'/%3E%3Crect x='196' y='196' width='48' height='124' fill='%235ec8d6' opacity='.42'/%3E%3Cpath d='M300 320 l50 -110 l44 110' fill='%23fffdf8' opacity='.75'/%3E%3Cpath d='M400 320 l56 -80 l46 80' fill='%23f7b955' opacity='.7'/%3E%3C/svg%3E" alt="城市夜景建筑插画作品">
+          <figcaption>夜街建筑档案 · 第 24 张</figcaption>
+        </figure>
+        <figure class="xxh-wall-item">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 320'%3E%3Crect width='320' height='320' fill='%23eef0e6'/%3E%3Cpath d='M40 250 q60 -110 120 -20 q50 -70 120 20' fill='none' stroke='%233f7a4a' stroke-width='5' stroke-linecap='round'/%3E%3Crect x='136' y='80' width='48' height='70' rx='5' fill='%23fffdf8' stroke='%231b1d29' stroke-width='2'/%3E%3Cpath d='M150 100 h20 M150 116 h20' stroke='%233f7a4a' stroke-width='3'/%3E%3C/svg%3E" alt="日常速写本翻页记录插画">
+          <figcaption>速写本翻页</figcaption>
+        </figure>
+        <figure class="xxh-wall-item">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 320'%3E%3Crect width='320' height='320' fill='%23f7f1e6'/%3E%3Ccircle cx='160' cy='160' r='80' fill='none' stroke='%23e08a1e' stroke-width='4' stroke-dasharray='12 8'/%3E%3Ccircle cx='160' cy='160' r='40' fill='%23f7b955' opacity='.7'/%3E%3Cpath d='M160 120 v80 M120 160 h80' stroke='%232b2f45' stroke-width='4'/%3E%3C/svg%3E" alt="构图推敲练习稿插画">
+          <figcaption>构图推敲练习</figcaption>
+        </figure>
+      </div>
+      <p class="xxh-wall-hint">以上作品均来自小小绘社区公开投稿，如需转载请联系对应创作者或通过投稿入口说明用途。</p>
+    </div>
+  </section>
+
+  <!-- 用户评价 -->
+  <section class="xxh-section" id="xxh-reviews">
+    <div class="xxh-wrap">
+      <div class="xxh-sec-head">
+        <div>
+          <span class="xxh-sec-kicker">VOICES</span>
+          <h2>社区<i>声音</i></h2>
+          <p class="xxh-sec-desc">来自社区成员的真实反馈，不同角度、不同长度，记录他们与小小绘的相处方式。</p>
+        </div>
+      </div>
+      <div class="xxh-review-grid">
+        <article class="xxh-review">
+          <div class="xxh-review-head"><span class="xxh-avatar-s" style="background:#e08a1e">苏</span><b>苏打水不加冰</b><span>关注 2 年</span></div>
+          <p>最开始是被线条练习那期吸引的，后来发现自己其实更爱看过程里那些“画坏了怎么办”的部分。很少有创作者愿意把失误完整放出来，这点让我觉得很踏实。</p>
+          <div class="xxh-review-tags"><i>教程干货</i><i>真实</i></div>
+        </article>
+        <article class="xxh-review">
+          <div class="xxh-review-head"><span class="xxh-avatar-s" style="background:#2f8f9d">木</span><b>木南</b><span>关注 8 个月</span></div>
+          <p>投稿了十分钟速写挑战，第一次收到编辑的逐条点评，指出了我画面重心偏右上。虽然只是几句话，但比我自己瞎练一个月都有用。</p>
+          <div class="xxh-review-tags"><i>社区共创</i></div>
+        </article>
+        <article class="xxh-review">
+          <div class="xxh-review-head"><span class="xxh-avatar-s" style="background:#6c5ce7">阿</span><b>阿栗的迷弟</b><span>关注 1 年半</span></div>
+          <p>角色档案这个栏目真的很上头。把一个角色的三套造型拆开讲，连围巾的打法都解释了为什么这么选。看完会忍不住自己也捏一个角色出来。</p>
+          <div class="xxh-review-tags"><i>角色设定</i><i>原创</i></div>
+        </article>
+        <article class="xxh-review">
+          <div class="xxh-review-head"><span class="xxh-avatar-s" style="background:#3f7a4a">慢</span><b>慢半拍的手</b><span>关注 3 个月</span></div>
+          <p>作为完全零基础的人，这里的内容门槛对我来说刚刚好。不会一上来就讲很深的透视，而是先让你愿意动笔。现在每周都能画完一张，虽然还是很粗糙。</p>
+          <div class="xxh-review-tags"><i>入门友好</i></div>
+        </article>
+        <article class="xxh-review">
+          <div class="xxh-review-head"><span class="xxh-avatar-s" style="background:#a5688a">梨</span><b>梨白工作室</b><span>合作方</span></div>
+          <p>和小小绘合作过一次联名插画，从沟通到交付的流程非常清晰，对配色和版权的要求都写得很明白。作为合作方，这种专业度让人放心。</p>
+          <div class="xxh-review-tags"><i>品牌合作</i><i>专业</i></div>
+        </article>
+        <article class="xxh-review">
+          <div class="xxh-review-head"><span class="xxh-avatar-s" style="background:#3b6d78">夜</span><b>夜行画者</b><span>社区创作者</span></div>
+          <p>把自己的城市写生发上来之后，收到了很多本地人的留言，说“原来我家附近那个转角这么好看”。这种被看见的感觉，是继续画下去的动力之一。</p>
+          <div class="xxh-review-tags"><i>城市探索</i><i>陪伴</i></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 企业动态 -->
+  <section class="xxh-section xxh-section--alt" id="xxh-log">
+    <div class="xxh-wrap">
+      <div class="xxh-sec-head">
+        <div>
+          <span class="xxh-sec-kicker">NEWS</span>
+          <h2>企业<i>动态</i>与更新</h2>
+          <p class="xxh-sec-desc">品牌公告、内容上线与合作信息的统一发布入口，按时间倒序排列。</p>
+        </div>
+      </div>
+      <div class="xxh-log">
+        <div class="xxh-log-item">
+          <time>2026-11-19</time>
+          <h3>冬季企划《手绘的温度》第 3 期正式发布</h3>
+          <p>本期围绕“亮着灯的屋子”展开，包含完整绘制流程 11 步、配色逻辑说明与角色设定档案 12 页，同步开放社区共创投稿通道。</p>
+        </div>
+        <div class="xxh-log-item">
+          <time>2026-11-08</time>
+          <h3>「十分钟速写挑战」第 8 轮报名开启</h3>
+          <p>本轮主题为「通勤」，报名截止 12 月 5 日。作品提交后将进入社区投票环节，入选作品将收录进官方影像墙。</p>
+        </div>
+        <div class="xxh-log-item">
+          <time>2026-10-26</time>
+          <h3>小小绘创作者矩阵新增三位合作作者</h3>
+          <p>欢迎禾木手记、梨白、夜行画者加入长期内容合作，三位创作者将分别带来日常记录、水彩幕后与城市写生方向的连载更新。</p>
+        </div>
+        <div class="xxh-log-item">
+          <time>2026-09-30</time>
+          <h3>《线稿的力量》第三季完结，累计收录 42 篇内容</h3>
+          <p>本季聚焦留白与呼吸感，完结后整理为完整专题索引，方便社区成员按顺序回顾全部图文与过程记录。</p>
+        </div>
+        <div class="xxh-log-item">
+          <time>2026-08-15</time>
+          <h3>官方网站内容结构升级与检索优化</h3>
+          <p>新增站内搜索、作者档案与专题索引，优化移动端浏览体验。所有历史内容保持可访问，原链接结构不变。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="xxh-section" id="xxh-faq">
+    <div class="xxh-wrap">
+      <div class="xxh-sec-head">
+        <div>
+          <span class="xxh-sec-kicker">FAQ</span>
+          <h2>常见<i>问题</i></h2>
+          <p class="xxh-sec-desc">关于内容授权、投稿、合作与浏览的常见疑问，点击即可展开查看。</p>
+        </div>
+      </div>
+      <div class="xxh-faq">
+        <details>
+          <summary>小小绘网站上的作品可以转载或商用吗？</summary>
+          <p>网站内展示的插画作品版权均归对应创作者所有。非商业用途的转载需注明作者与来源，并保留作品完整信息；任何商业用途、二次修改或再发布，都必须通过投稿入口或联系邮箱取得书面授权。我们会在 3 个工作日内回复授权请求。</p>
+        </details>
+        <details>
+          <summary>如何参与「十分钟速写挑战」等社区企划？</summary>
+          <p>在动态区查看当期活动公告，按公告中的尺寸与题材要求完成作品，然后通过页面底部的投稿入口提交。提交时请填写作者昵称、联系方式与作品说明。活动不收取任何费用，每位成员每轮最多提交两幅作品。</p>
+        </details>
+        <details>
+          <summary>投稿的作品一定会被发布吗？</summary>
+          <p>不一定。小小绘对公开内容有统一的完成度与原创性要求，编辑团队会对投稿逐份查看。若作品暂未达到发布标准，我们会给出具体的改进建议；若涉及临摹或参考，请在投稿时注明素材来源，避免版权争议。</p>
+        </details>
+        <details>
+          <summary>我是品牌方，想与小小绘进行插画合作，流程是怎样的？</summary>
+          <p>请通过联系模块提供的邮箱说明合作背景、使用场景、交付时间与预算范围。我们会在评估风格契合度后回复初步方案。常规商业插画合作包含需求确认、草图沟通、成稿交付与使用范围确认四个阶段，具体排期以双方约定为准。</p>
+        </details>
+        <details>
+          <summary>网站上的教程内容适合完全零基础的初学者吗？</summary>
+          <p>适合。小小绘的教程类内容会尽量把抽象问题拆成可执行的步骤，例如线条练习会具体到握笔角度、发力方式与每日练习时长。建议从「教程干货」标签下的基础内容开始，按顺序观看，不必一次看完，动手比看完更重要。</p>
+        </details>
+        <details>
+          <summary>作品墙上的图片可以保存下来做练习参考吗？</summary>
+          <p>可以用于个人非公开的学习与临摹练习，但请勿将临摹作品作为原创发布，也不要用于任何形式的售卖或课程讲义。如需在公开场合引用，请先联系原作者取得许可，并在显著位置标注出处。</p>
+        </details>
+        <details>
+          <summary>如何关注某位创作者的最新更新？</summary>
+          <p>点击创作者卡片中的「查看档案」可以看到该作者的公开信息与近期作品。目前站内通过专题索引与动态区集中展示更新，后续会开放更细粒度的订阅功能，相关进展会在企业动态中公布。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 投稿 / 联系 -->
+  <section class="xxh-section" id="xxh-join">
+    <div class="xxh-wrap">
+      <div class="xxh-join">
+        <div class="xxh-join-grid">
+          <div>
+            <h2>把你的<i>绘作</i>，放到这里来</h2>
+            <p>小小绘长期开放社区投稿与合作洽谈。无论是一张速写、一段创作过程，还是一个尚未成形的角色想法，都欢迎提交。我们相信，真实的表达值得被认真对待。</p>
+            <div class="xxh-join-actions">
+              <button class="xxh-btn xxh-btn-amber" type="button" id="xxhSubmitBtn">提交作品 / 投稿</button>
+              <button class="xxh-btn xxh-btn-ghost" type="button" id="xxhShareBtnJoin" style="color:#efe9dc;border-color:rgba(239,233,220,.4)">分享本页</button>
+              <button class="xxh-btn xxh-btn-ghost" type="button" id="xxhReportBtn" style="color:#efe9dc;border-color:rgba(239,233,220,.4)">反馈问题</button>
+            </div>
+          </div>
+          <div class="xxh-join-side">
+            <h3>合作与联系</h3>
+            <ul>
+              <li><span>投稿邮箱</span><b>submit@xiaoxiaohui.studio</b></li>
+              <li><span>商务合作</span><b>partner@xiaoxiaohui.studio</b></li>
+              <li><span>内容授权</span><b>license@xiaoxiaohui.studio</b></li>
+              <li><span>工作时间</span><b>周一至周五 10:00–18:00</b></li>
+              <li><span>办公地点</span><b>杭州 · 拱墅区创意园</b></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- 页脚 -->
+<footer class="xxh-footer">
+  <div class="xxh-wrap">
+    <div class="xxh-footer-grid">
+      <div>
+        <div class="xxh-footer-logo">
+          <span class="xxh-logo-mark">小</span>
+          <b>小小绘</b>
+        </div>
+        <p>小小绘官方网站，专注于原创插画与创作记录的品牌内容平台。自 2020 年起持续运营，致力于为创作者与爱好者提供高品质、可学习、可长期参与的内容生态。</p>
+        <p>品牌理念：从细小的日常出发，用真实的线条，留下可以被看见的温度。</p>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <ul>
+          <li><a href="#xxh-focus">焦点内容</a></li>
+          <li><a href="#xxh-videos">精品绘作流</a></li>
+          <li><a href="#xxh-topics">专题企划</a></li>
+          <li><a href="#xxh-wall">社区影像墙</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于品牌</h4>
+        <ul>
+          <li><a href="#xxh-about">品牌故事</a></li>
+          <li><a href="#xxh-makers">创作者矩阵</a></li>
+          <li><a href="#xxh-log">企业动态</a></li>
+          <li><a href="#xxh-reviews">社区声音</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>参与支持</h4>
+        <ul>
+          <li><a href="#xxh-join">投稿与合作</a></li>
+          <li><a href="#xxh-faq">常见问题</a></li>
+          <li><a href="#xxh-join">内容授权</a></li>
+          <li><a href="#xxh-top">返回首页</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="xxh-footer-bottom">
+      <span>© 2020–2026 小小绘 XiaoXiaoHui 官方网站 · 保留所有权利</span>
+      <span>内容均为原创发布 · 转载须获授权</span>
+      <span>浙ICP备 2026000000 号 · 持续运营中</span>
+    </div>
+  </div>
+</footer>
+
+<button class="xxh-to-top" id="xxhToTop" aria-label="回到顶部">↑</button>
+<div class="xxh-toast" id="xxhToast"></div>
+
+<!-- 弹窗：投稿 -->
+<div class="xxh-modal" id="xxhSubmitModal">
+  <div class="xxh-modal-box">
+    <button class="xxh-modal-close" type="button" data-close-modal>✕</button>
+    <h3>提交作品 / 投稿</h3>
+    <p class="xxh-modal-sub">填写基本信息，编辑团队会在 3 个工作日内通过邮箱回复。</p>
+    <form id="xxhSubmitForm">
+      <label for="xxhName">称呼 / 昵称</label>
+      <input id="xxhName" type="text" placeholder="例如：苏打水不加冰" required>
+      <label for="xxhMail">联系邮箱</label>
+      <input id="xxhMail" type="email" placeholder="用于接收回复" required>
+      <label for="xxhType">投稿类型</label>
+      <select id="xxhType">
+        <option>原创插画作品</option>
+        <option>创作过程 / 教程内容</option>
+        <option>角色设定档案</option>
+        <option>社区企划参与</option>
+        <option>品牌合作咨询</option>
+      </select>
+      <label for="xxhNote">作品说明</label>
+      <textarea id="xxhNote" rows="3" placeholder="简要描述作品主题、使用素材与创作时间"></textarea>
+      <button class="xxh-btn xxh-btn-primary" type="submit">确认提交</button>
+    </form>
+  </div>
+</div>
+
+<!-- 弹窗：作者档案 -->
+<div class="xxh-modal" id="xxhMakerModal">
+  <div class="xxh-modal-box">
+    <button class="xxh-modal-close" type="button" data-close-modal>✕</button>
+    <h3>创作者档案</h3>
+    <p class="xxh-modal-sub" id="xxhMakerModalText"></p>
+    <button class="xxh-btn xxh-btn-amber" type="button" data-close-modal>关闭</button>
+  </div>
+</div>
+
+<!-- 弹窗：分享 -->
+<div class="xxh-modal" id="xxhShareModal">
+  <div class="xxh-modal-box">
+    <button class="xxh-modal-close" type="button" data-close-modal>✕</button>
+    <h3>分享小小绘</h3>
+    <p class="xxh-modal-sub">选择分享方式，或复制页面链接发送给朋友。</p>
+    <div class="xxh-share-list">
+      <button type="button" data-share-way="微信">微信</button>
+      <button type="button" data-share-way="微博">微博</button>
+      <button type="button" data-share-way="QQ">QQ</button>
+    </div>
+    <button class="xxh-btn xxh-btn-primary" type="button" id="xxhCopyLink">复制页面链接</button>
+  </div>
+</div>
+
+<!-- 弹窗：反馈 -->
+<div class="xxh-modal" id="xxhReportModal">
+  <div class="xxh-modal-box">
+    <button class="xxh-modal-close" type="button" data-close-modal>✕</button>
+    <h3>反馈问题</h3>
+    <p class="xxh-modal-sub">如发现内容错误、版权疑问或浏览异常，请在这里告诉我们。</p>
+    <form id="xxhReportForm">
+      <label for="xxhReportType">问题类型</label>
+      <select id="xxhReportType">
+        <option>内容信息有误</option>
+        <option>版权相关疑问</option>
+        <option>页面显示异常</option>
+        <option>其他建议</option>
+      </select>
+      <label for="xxhReportNote">问题描述</label>
+      <textarea id="xxhReportNote" rows="3" placeholder="请尽量描述具体情况与所在页面"></textarea>
+      <button class="xxh-btn xxh-btn-primary" type="submit">提交反馈</button>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* Toast */
+  var toastEl = document.getElementById('xxhToast');
+  var toastTimer = null;
+  function showToast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 2200);
+  }
+
+  /* 移动端导航 */
+  var burger = document.getElementById('xxhBurger');
+  var nav = document.getElementById('xxhNav');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    burger.classList.toggle('on', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){
+      nav.classList.remove('open');
+      burger.classList.remove('on');
+      burger.setAttribute('aria-expanded','false');
+      Array.prototype.forEach.call(nav.querySelectorAll('a'), function(a){ a.classList.remove('is-active'); });
+      e.target.classList.add('is-active');
+    }
+  });
+
+  /* 搜索提示 */
+  var searchInput = document.getElementById('xxhSearch');
+  var searchTip = document.getElementById('xxhSearchTip');
+  var searchData = [
+    '手绘的温度 · 冬季专题第 3 期',
+    '线稿的力量 · 线条节奏与留白',
+    '角色档案 · 阿栗的三套冬季造型',
+    '十分钟速写挑战 · 本轮主题通勤',
+    '线条为什么总是抖 · 基础练习',
+    '水彩叠加的先后顺序 · 幕后复盘',
+    '原创建作者 · 小小 / 林间铅笔 / 七号画室',
+    '投稿指南与内容授权说明'
+  ];
+  function runSearch(){
+    var q = searchInput.value.trim();
+    searchTip.innerHTML = '';
+    if(!q){
+      searchTip.classList.remove('show');
+      return;
+    }
+    var hits = searchData.filter(function(item){ return item.indexOf(q) !== -1; });
+    if(hits.length === 0){
+      searchTip.innerHTML = '<p class="xxh-empty">没有找到「' + q + '」，试试：速写、线稿、角色、投稿</p>';
+    } else {
+      hits.slice(0,5).forEach(function(item){
+        var p = document.createElement('p');
+        p.textContent = item;
+        searchTip.appendChild(p);
+      });
+    }
+    searchTip.classList.add('show');
+  }
+  searchInput.addEventListener('input', runSearch);
+  searchInput.addEventListener('focus', runSearch);
+  document.getElementById('xxhSearchBtn').addEventListener('click', function(){
+    var q = searchInput.value.trim();
+    if(!q){ showToast('请输入要搜索的关键词'); return; }
+    runSearch();
+    showToast('已为你筛选「' + q + '」相关内容');
+  });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.xxh-search')) searchTip.classList.remove('show');
+  });
+
+  /* 点赞 / 收藏 */
+  document.getElementById('xxhVideoGrid').addEventListener('click', function(e){
+    var likeBtn = e.target.closest('[data-like]');
+    var saveBtn = e.target.closest('[data-save]');
+    var shareBtn = e.target.closest('[data-share]');
+    if(likeBtn){
+      var numEl = likeBtn.querySelector('span');
+      var num = parseInt(numEl.textContent, 10) || 0;
+      if(likeBtn.classList.contains('liked')){
+        likeBtn.classList.remove('liked');
+        num = Math.max(0, num - 1);
+        numEl.textContent = num;
+        likeBtn.firstChild.nodeValue = '♡ ';
+      } else {
+        likeBtn.classList.add('liked');
+        num = num + 1;
+        numEl.textContent = num;
+        likeBtn.firstChild.nodeValue = '♥ ';
+        showToast('已点赞，感谢支持原创内容');
+      }
+    }
+    if(saveBtn){
+      var saved = saveBtn.classList.toggle('saved');
+      saveBtn.firstChild.nodeValue = saved ? '♥ 已收藏' : '♡ 收藏';
+      showToast(saved ? '已加入收藏夹' : '已取消收藏');
+    }
+    if(shareBtn){
+      openModal('xxhShareModal');
+    }
+  });
+
+  /* 弹窗控制 */
+  var modals = document.querySelectorAll('.xxh-modal');
+  function openModal(id){
+    var m = document.getElementById(id);
+    if(m) m.classList.add('show');
+  }
+  function closeAllModals(){
+    Array.prototype.forEach.call(modals, function(m){ m.classList.remove('show'); });
+  }
+  Array.prototype.forEach.call(modals, function(m){
+    m.addEventListener('click', function(e){
+      if(e.target === m || e.target.hasAttribute('data-close-modal')) closeAllModals();
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeAllModals();
+  });
+
+  /* 分享 */
+  function doShare(way){
+    closeAllModals();
+    showToast('已生成' + way + '分享内容，可粘贴发送');
+  }
+  document.getElementById('xxhShareBtnHero').addEventListener('click', function(){ openModal('xxhShareModal'); });
+  document.getElementById('xxhShareBtnJoin').addEventListener('click', function(){ openModal('xxhShareModal'); });
+  document.querySelectorAll('[data-share-way]').forEach(function(btn){
+    btn.addEventListener('click', function(){ doShare(btn.getAttribute('data-share-way')); });
+  });
+  document.getElementById('xxhCopyLink').addEventListener('click', function(){
+    var link = window.location.href;
+    function fallbackCopy(){
+      var ta = document.createElement('textarea');
+      ta.value = link;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try{ document.execCommand('copy'); showToast('页面链接已复制'); }
+      catch(err){ showToast('复制失败，请手动复制地址栏链接'); }
+      document.body.removeChild(ta);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(link).then(function(){
+        showToast('页面链接已复制');
+        closeAllModals();
+      }).catch(fallbackCopy);
+    } else {
+      fallbackCopy();
+      closeAllModals();
+    }
+  });
+
+  /* 投稿 */
+  document.getElementById('xxhSubmitBtn').addEventListener('click', function(){ openModal('xxhSubmitModal'); });
+  document.getElementById('xxhSubmitForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('xxhName').value.trim();
+    if(!name){ showToast('请填写称呼'); return; }
+    closeAllModals();
+    this.reset();
+    showToast('投稿已提交，我们会在 3 个工作日内回复');
+  });
+
+  /* 反馈 */
+  document.getElementById('xxhReportBtn').addEventListener('click', function(){ openModal('xxhReportModal'); });
+  document.getElementById('xxhReportForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    closeAllModals();
+    this.reset();
+    showToast('反馈已收到，感谢你帮助我们一起改进');
+  });
+
+  /* 作者档案 */
+  var makerModalText = document.getElementById('xxhMakerModalText');
+  document.querySelectorAll('[data-maker]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      makerModalText.textContent = btn.getAttribute('data-maker');
+      openModal('xxhMakerModal');
+    });
+  });
+
+  /* 回到顶部 */
+  var toTop = document.getElementById('xxhToTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 520) toTop.classList.add('show');
+    else toTop.classList.remove('show');
+  }, {passive:true});
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* 数字滚动 */
+  function animateCount(el){
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    if(isNaN(target)) return;
+    var start = 0;
+    var step = Math.max(1, Math.ceil(target / 42));
+    var timer = setInterval(function(){
+      start += step;
+      if(start >= target){
+        start = target;
+        clearInterval(timer);
+      }
+      el.textContent = start.toLocaleString('zh-CN');
+    }, 26);
+  }
+  var counted = false;
+  var stats = document.querySelectorAll('[data-count]');
+  function checkCount(){
+    if(counted) return;
+    if(!stats.length) return;
+    var first = stats[0];
+    var rect = first.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 60){
+      counted = true;
+      Array.prototype.forEach.call(stats, animateCount);
+    }
+  }
+  window.addEventListener('scroll', checkCount, {passive:true});
+  window.addEventListener('load', checkCount);
+  checkCount();
+})();
+</script>
+</body>
+          </html>
